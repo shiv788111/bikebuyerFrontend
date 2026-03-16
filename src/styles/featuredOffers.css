@@ -1,0 +1,170 @@
+.fo-unique-wrapper {
+  width: 100%;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* VIDEO CARD */
+.fo-unique-card {
+  width: 100%;
+  max-width: 880px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+/* VIDEO CONTAINER */
+.fo-unique-video {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.fo-unique-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+/* CONTENT */
+.fo-unique-content {
+  max-width: 1100px;
+  width: 100%;
+  padding: 0 16px;
+  text-align: left;
+}
+
+.fo-unique-content h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.fo-unique-content p {
+  font-size: 15px;
+  color: #555;
+  max-width: 680px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.fo-unique-btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: red;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.fo-unique-btn:hover {
+  opacity: 0.9;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Large Laptop */
+@media (max-width: 1200px) {
+  .fo-unique-video {
+    height: 380px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .fo-unique-video {
+    height: 340px;
+  }
+
+  .fo-unique-content h3 {
+    font-size: 24px;
+  }
+}
+
+/* Small Tablet */
+@media (max-width: 768px) {
+  .fo-unique-wrapper {
+    padding: 28px 0;
+  }
+
+  .fo-unique-video {
+    height: 260px;
+  }
+
+  .fo-unique-video iframe {
+    width: 140%;
+    height: 160%;
+  }
+
+  .fo-unique-content {
+    padding: 0 14px;
+  }
+
+  .fo-unique-content h3 {
+    font-size: 22px;
+  }
+
+  .fo-unique-content p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+/* Mobile */
+@media (max-width: 600px) {
+
+  .fo-unique-video {
+    height: 200px; /* 🔥 clean compact height */
+    border-radius: 16px;
+  }
+
+  /* Less zoom for mobile */
+  .fo-unique-video iframe {
+    width: 125%;
+    height: 125%;
+  }
+
+  .fo-unique-content {
+    text-align: center;
+  }
+
+  .fo-unique-content h3 {
+    font-size: 20px;
+  }
+
+  .fo-unique-content p {
+    font-size: 13.5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .fo-unique-btn {
+    width: 100%;
+    max-width: 220px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 420px) {
+
+  .fo-unique-video {
+    height: 180px; /* 🔥 perfect small screen height */
+  }
+
+  .fo-unique-video iframe {
+    width: 115%;
+    height: 115%;
+  }
+
+}

@@ -1,0 +1,139 @@
+/* ================= SELLER REGISTER PAGE ================= */
+
+.sell-register-wrapper {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa, #e4ebf5);
+  padding: 20px;
+ 
+}
+
+/* CARD */
+.sell-register-card {
+  width: 100%;
+  max-width: 450px;
+  background: #ffffff;
+  padding: 36px 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.6s ease;
+   margin-bottom: 50px;
+}
+
+/* HEADER */
+.sell-register-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.sell-register-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 6px;
+}
+
+.sell-register-header p {
+  font-size: 14px;
+  color: #101114;
+}
+
+/* INPUT GROUP */
+.input-group {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-group input {
+  width: 80%;
+  padding: 14px 14px 14px 46px;
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.25s ease;
+  background: #f9fafb;
+}
+
+.input-group input:focus {
+
+  background: #ffffff;
+
+}
+
+/* ICON */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+/* REGISTER BUTTON */
+.register-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #e53935, #c62828);color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.register-btn:hover {
+  transform: translateY(-1px);
+  
+}
+
+.register-btn:active {
+  transform: scale(0.98);
+}
+
+/* FOOTER */
+.sell-register-footer {
+  margin-top: 22px;
+  text-align: center;
+  font-size: 14px;
+  color: #1b1f27;
+}
+
+.sell-register-footer a {
+  color: red;
+  font-weight: 600;
+  margin-left: 4px;
+  text-decoration: none;
+}
+
+.sell-register-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
+  .sell-register-card {
+    padding: 28px 22px;
+  }
+
+  .sell-register-header h2 {
+    font-size: 22px;
+  }
+}

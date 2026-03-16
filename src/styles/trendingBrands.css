@@ -1,0 +1,220 @@
+/* ========================= */
+/* SECTION */
+/* ========================= */
+
+.brand-section {
+  max-width: 1300px;
+  margin: 80px auto;
+  padding: 0 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+.brand-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.brand-header h2 {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.brand-header p {
+  font-size: 15px;
+  color: #666;
+}
+
+/* ========================= */
+/* 🔥 AUTO SLIDER */
+/* ========================= */
+
+.tb-carousel {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  padding: 30px 0;
+  scrollbar-width: none;
+}
+
+.tb-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.tb-track {
+  display: flex;
+  gap: 28px;
+}
+
+@keyframes tbScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ========================= */
+/* BRAND CARD */
+/* ========================= */
+
+.tb-card {
+  min-width: 180px;
+  padding: 22px 18px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.tb-card img {
+  max-width: 90px;
+  max-height: 45px;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.tb-card span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+}
+
+.tb-card:hover {
+  border-color: #e53935;
+  transform: scale(1.05);
+}
+
+.tb-card:hover img {
+  transform: scale(1.1);
+}
+
+.tb-card:hover span {
+  color: #e53935;
+}
+
+.tb-active {
+  border: 2px solid #e53935;
+}
+
+.tb-active span {
+  color: #e53935;
+}
+
+/* ========================= */
+/* BIKES SECTION */
+/* ========================= */
+
+.brand-bikes-section {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #eee;
+}
+
+.brand-bikes-section h3 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.bike-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.bike-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.15);
+}
+
+.bike-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.bike-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 15px 18px 5px;
+}
+
+.bike-card p {
+  padding: 0 18px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e53935;
+}
+
+.offer-btn {
+  margin: 0 18px 20px;
+  padding: 10px;
+  width: calc(100% - 36px);
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* EMPTY STATE */
+/* ========================= */
+
+.empty-state {
+  margin-top: 10px;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 28px;
+  border: 1px solid #f8f3f3;
+}
+
+.empty-state img {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.empty-state h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+  .brand-header h2 {
+    font-size: 26px;
+  }
+
+  .tb-card {
+    min-width: 150px;
+  }
+}

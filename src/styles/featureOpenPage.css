@@ -1,0 +1,215 @@
+/* ===== Section Base ===== */
+.feature-page {
+  padding: 80px 20px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease;
+}
+
+.feature-page.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+  padding: 0 15px;
+}
+
+/* ===== Back Button ===== */
+.back-home {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #dc2626;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: 0.3s ease;
+  border: 1px solid rgb(216, 10, 10);
+}
+
+.back-btn:hover {
+  background: #dc2626;
+  color: #fff;
+  transform: translateX(-3px);
+  text-decoration: none;
+}
+
+/* ===== Heading ===== */
+.feature-page h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.feature-page h1::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #dc2626;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 5px;
+}
+
+/* ===== Description ===== */
+.feature-page p {
+  font-size: 16px;
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* ===== Benefits Grid ===== */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+/* ===== Benefit Card ===== */
+.benefit-card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid #f3f3f3;
+  transition: 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  border-color: #dc2626;
+}
+
+.benefit-icon {
+  width: 36px;
+  height: 36px;
+  color: #dc2626;
+  margin-bottom: 12px;
+}
+
+.benefit-card span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* ===== Highlight Section ===== */
+.highlight-box {
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 750px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.highlight-box h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0d0b0b;
+  margin-bottom: 8px;
+}
+
+.highlight-box p {
+  font-size: 15px;
+  color: #444;
+  margin: 0;
+}
+
+/* ===== CTA ===== */
+.cta-section {
+  margin-top: 30px;
+}
+
+.cta-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 13px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(220, 38, 38, 0.25);
+}
+
+/* ========================= */
+/* ===== RESPONSIVE ======== */
+/* ========================= */
+
+/* 📱 Mobile (max 576px) */
+@media (max-width: 576px) {
+  .feature-page {
+    padding: 60px 15px;
+  }
+
+  .feature-page h1 {
+    font-size: 24px;
+  }
+
+  .feature-page p {
+    font-size: 14px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .benefit-card {
+    padding: 18px;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+}
+
+/* 📲 Tablet (577px - 992px) */
+@media (min-width: 577px) and (max-width: 992px) {
+  .feature-page h1 {
+    font-size: 30px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .highlight-box {
+    padding: 25px;
+  }
+}
+
+/* 🖥 Large Desktop (1200px+) */
+@media (min-width: 1200px) {
+  .feature-page h1 {
+    font-size: 42px;
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

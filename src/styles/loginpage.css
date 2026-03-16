@@ -1,0 +1,232 @@
+/* ===== Page ===== */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+
+}
+
+/* ===== Wrapper ===== */
+.login-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ===== Card ===== */
+.login-card {
+
+  border-radius: 18px;
+  padding: 22px 22px 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 80px;
+}
+
+/* ===== Header ===== */
+.login-header {
+  text-align: center;
+}
+
+.login-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.login-logo {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #e53935, #d32f2f);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.logo-icon {
+  color: #ffffff;
+  width: 22px;
+  height: 22px;
+}
+
+.login-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.login-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ===== Form ===== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== Input Group ===== */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  /* background: #f9fafb; */
+  padding: 0 12px;
+  height: 48px;
+  transition: all 0.25s ease;
+}
+
+.input-wrapper:focus-within {
+  /* background: #ffffff; */
+  border-color: #e53935;
+  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.15);
+}
+
+/* Country code */
+.country-code-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.country-code {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.separator {
+  width: 1px;
+  height: 18px;
+  /* background: #d1d5db; */
+}
+
+/* Input */
+.mobile-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 8px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.mobile-input::placeholder {
+  color: #9ca3af;
+}
+
+.input-hint {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ===== Buttons Common ===== */
+.btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-icon,
+.btn-icon-left {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== Continue Button ===== */
+.continue-btn {
+  height: 48px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #e53935, #d32f2f);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.continue-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(229, 57, 53, 0.4);
+}
+
+.continue-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Divider ===== */
+.divider-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+ 
+}
+
+.divider-text {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+
+
+/* ===== Footer ===== */
+.footer-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: #6b7280;
+  padding-bottom: 30px;
+}
+
+.footer-link {
+  background: none;
+  border: none;
+  color: #e53935;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 20px;
+  }
+}

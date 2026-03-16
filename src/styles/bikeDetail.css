@@ -1,0 +1,1179 @@
+/* ===== BIKE DETAIL PAGE - PURE WHITE THEME ===== */
+
+/* ================= PAGE ================= */
+.bike-detail-modern-page {
+  min-height: 80vh;
+  padding: 30px 16px 90px;
+  /* background: #f8f9fa; */
+  display: flex;
+  justify-content: center;
+}
+
+
+/* ================= MAIN CARD ================= */
+.bike-card-modern {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+}
+
+/* ================= LEFT ================= */
+.bike-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ================= IMAGE SECTION ================= */
+.bike-image-modern {
+  position: relative;
+  /* background: linear-gradient(145deg, #fafafa, #f5f5f5); */
+  border-radius: 40px;
+  padding: 16px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+}
+
+.main-bike-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+  /* background: #ffffff; */
+}
+
+.bike-image-modern:hover .main-bike-img {
+  transform: scale(1.02);
+}
+
+/* ================= SLIDER BUTTONS ================= */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #e5e7eb;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  z-index: 2;
+}
+
+.slider-btn:hover {
+  background: #e53935;
+  color: #ffffff;
+  border-color: #e53935;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.slider-btn.prev { left: 16px; }
+.slider-btn.next { right: 16px; }
+
+/* ================= BIKE DETAILS ================= */
+.bike-details-modern {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid #f0f0f0;
+}
+
+.bike-details-modern h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.bike-details-modern h2 {
+  font-size: 24px;
+  color: #e53935;
+  margin: 0 0 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bike-details-modern h2::before {
+  content: '₹';
+  font-size: 20px;
+  color: #e53935;
+  font-weight: 600;
+}
+
+.bike-details-modern h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 24px 0 16px;
+  position: relative;
+  display: inline-block;
+}
+
+.bike-details-modern h3::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #e53935, #ff8a8a);
+  border-radius: 4px;
+}
+
+.bike-desc {
+  color: #4a5568;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+/* ================= SPECS GRID ================= */
+.bike-specs-modern {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.bike-specs-modern div {
+  background: #f8f9fa;
+  padding: 16px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  color: #4a5568;
+  border: 1px solid #f0f0f0;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bike-specs-modern div:hover {
+  border-color: #e53935;
+  box-shadow: 0 8px 16px rgba(229, 57, 53, 0.06);
+  transform: translateY(-2px);
+}
+
+.bike-specs-modern strong {
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ================= BACK BUTTON ================= */
+.back-btn {
+  margin-top: 24px;
+  padding: 12px 24px;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  color: #4a5568;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-btn:hover {
+  background: #e53935;
+  border-color: #e53935;
+  color: #ffffff;
+  transform: translateX(-4px);
+}
+
+.back-btn::before {
+  content: '←';
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.back-btn:hover::before {
+  transform: translateX(-4px);
+}
+
+/* ================= RIGHT SIDE ================= */
+.bike-right {
+  position: relative;
+}
+
+/* ================= DEALER CARD ================= */
+.dealer-card {
+  position: sticky;
+  top: 100px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.dealer-card:hover {
+  box-shadow: 0 20px 40px rgba(229, 57, 53, 0.08);
+  border-color: #363333;
+}
+
+/* ================= DEALER INFO ================= */
+.dealer-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.dealer-avatar {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+  color: #fff;
+  font-size: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 2px solid #e53935;
+}
+
+.dealer-info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.dealer-info p {
+  font-size: 14px;
+  color: #666;
+  margin: 2px 0;
+}
+
+.dealer-email {
+  font-size: 13px;
+  color: #4a5568;
+  word-break: break-all;
+}
+
+.verified-badge {
+  margin-top: 8px;
+  background: #f0fdf4;
+  color: #16a34a;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-weight: 600;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #bbf7d0;
+}
+
+/* ================= BUTTONS ================= */
+.dealer-actions {
+  display: flex;
+  flex-direction: row;   /* left-right */
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;       /* mobile me neeche aa jaye */
+}
+
+.dealer-enquiry-btn,
+.dealer-whatsapp-btn {
+  flex: 1;               /* dono equal width */
+  padding: 10px 18px;    /* chhota size */
+  border-radius: 50px;
+  font-size: 14px;       /* font chhota */
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enquiry Button */
+.dealer-enquiry-btn {
+  background: linear-gradient( #c62828);
+  color: #fff;
+
+}
+
+.dealer-enquiry-btn:hover {
+  transform: translateY(-2px);
+  
+}
+
+/* WhatsApp Button */
+.dealer-whatsapp-btn {
+  background: linear-gradient(#25b058);
+  color: #fff;
+  /* box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25); */
+}
+
+.dealer-whatsapp-btn:hover {
+  transform: translateY(-2px);
+  /* box-shadow: 0 8px 18px rgba(37, 211, 102, 0.35); */
+}
+
+/* Hover text effect */
+.dealer-whatsapp-btn .hover-text {
+  display: none;
+}
+
+.dealer-whatsapp-btn:hover .default-text {
+  display: none;
+}
+
+.dealer-whatsapp-btn:hover .hover-text {
+  display: inline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .dealer-actions {
+    flex-direction: column;
+  }
+}
+
+/* ================= MODAL ================= */
+.enquiry-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+  animation: overlayFade 0.25s ease;
+}
+
+@keyframes overlayFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.enquiry-modal-content {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.enquiry-modal-header {
+  margin-bottom: 24px;
+}
+
+.enquiry-modal-header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.enquiry-modal-subtext {
+  font-size: 15px;
+  color: #666;
+}
+
+.enquiry-modal-content textarea {
+  width: 95%;
+  min-height: 120px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 2px solid #f0f0f0;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  transition: all 0.25s ease;
+  margin-bottom: 20px;
+}
+
+.enquiry-modal-content textarea:focus {
+  outline: none;
+  border-color: #e53935;
+  box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.1);
+}
+
+.enquiry-modal-content button[type="submit"] {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #e53935, #c62828);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.enquiry-modal-content button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(229, 57, 53, 0.25);
+}
+
+.enquiry-modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f8f9fa;
+  border: 1px solid #f0f0f0;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.enquiry-modal-close-btn:hover {
+  background: #e53935;
+  color: #fff;
+  border-color: #e53935;
+  transform: rotate(90deg);
+}
+
+/* ================= SIMILAR BIKES SECTION ================= */
+.similar-section {
+  margin: 60px auto;
+  max-width: 1200px;
+  padding: 0 24px;
+}
+
+.similar-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  position: relative;
+  display: inline-block;
+}
+
+.similar-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #e53935, #ff8a8a);
+  border-radius: 4px;
+}
+
+.similar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.similar-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.similar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px rgba(229, 57, 53, 0.08);
+  border-color: #e53935;
+}
+
+.similar-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.similar-card:hover img {
+  transform: scale(1.05);
+}
+
+.similar-card-content {
+  padding: 16px;
+}
+
+.similar-card-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.similar-card-content p {
+  font-size: 15px;
+  color: #e53935;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.similar-card-content p::before {
+  content: '₹';
+  font-size: 13px;
+  color: #e53935;
+  margin-right: 2px;
+}
+
+.similar-card-content button {
+  width: 100%;
+  padding: 10px;
+  background: #ffffff;
+  border: 1.5px solid #e53935;
+  color: #e53935;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.similar-card-content button:hover {
+  background: #e53935;
+  color: #ffffff;
+}
+
+/* ===== SIMILAR BIKES NOT FOUND ===== */
+.similar-not-found {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fafafa;
+  border-radius: 24px;
+  border: 2px dashed #e0e0e0;
+  margin: 20px 0;
+  animation: fadeIn 0.5s ease;
+}
+
+.similar-not-found-emoji {
+  font-size: 64px;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+  display: inline-block;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.similar-not-found h3 {
+  font-size: 22px;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.similar-not-found p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 24px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.similar-not-found button {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #e53935, #c62828);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 20px rgba(229, 57, 53, 0.15);
+}
+
+.similar-not-found button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(229, 57, 53, 0.25);
+}
+
+/* ===== LOADING STATE ===== */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.bike-loader {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #f0f0f0;
+  border-top: 4px solid #e53935;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Desktop Large (1400px+) */
+@media (min-width: 1400px) {
+  .bike-card-modern {
+    max-width: 1300px;
+  }
+  
+  .main-bike-img {
+    height: 400px;
+  }
+}
+
+/* Laptop (1024px - 1399px) */
+@media (max-width: 1200px) {
+  .bike-card-modern {
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .main-bike-img {
+    height: 320px;
+  }
+  
+  .bike-specs-modern {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (max-width: 1024px) {
+  .bike-card-modern {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .dealer-card {
+    position: static;
+    margin-top: 0;
+  }
+  
+  .main-bike-img {
+    height: 350px;
+  }
+  
+  .bike-details-modern h1 {
+    font-size: 26px;
+  }
+  
+  .bike-details-modern h2 {
+    font-size: 22px;
+  }
+  
+  .similar-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Large (600px - 767px) */
+@media (max-width: 767px) {
+  .bike-detail-modern-page {
+    padding: 20px 12px 60px;
+  }
+  
+  .bike-card-modern {
+    padding: 16px;
+  }
+  
+  .main-bike-img {
+    height: 280px;
+  }
+  
+  .slider-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+  
+  .bike-details-modern {
+    padding: 20px;
+  }
+  
+  .bike-details-modern h1 {
+    font-size: 24px;
+  }
+  
+  .bike-details-modern h2 {
+    font-size: 20px;
+  }
+  
+  .bike-desc {
+    font-size: 15px;
+  }
+  
+  .bike-specs-modern {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .bike-specs-modern div {
+    padding: 14px;
+  }
+  
+  .dealer-card {
+    padding: 22px;
+  }
+  
+  .dealer-left {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .dealer-avatar {
+    margin: 0 auto;
+  }
+  
+  .verified-badge {
+    margin: 8px auto 0;
+  }
+  
+  .similar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .similar-card img {
+    height: 160px;
+  }
+  
+  .enquiry-modal-content {
+    padding: 24px;
+  }
+  
+  .enquiry-modal-header h2 {
+    font-size: 22px;
+  }
+}
+
+/* Mobile Medium (480px - 599px) */
+@media (max-width: 599px) {
+  .main-bike-img {
+    height: 240px;
+  }
+  
+  .slider-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+  
+  .bike-details-modern h1 {
+    font-size: 22px;
+  }
+  
+  .bike-details-modern h2 {
+    font-size: 18px;
+  }
+  
+  .bike-desc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .bike-specs-modern div {
+    font-size: 13px;
+  }
+  
+  .dealer-card {
+    padding: 18px;
+  }
+  
+  .dealer-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+  
+  .dealer-info h4 {
+    font-size: 16px;
+  }
+  
+  .dealer-info p {
+    font-size: 13px;
+  }
+  
+  .dealer-enquiry-btn,
+  .dealer-whatsapp-btn {
+    padding: 14px;
+    font-size: 14px;
+  }
+  
+  .similar-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .similar-card {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .similar-not-found {
+    padding: 40px 16px;
+  }
+  
+  .similar-not-found-emoji {
+    font-size: 56px;
+  }
+  
+  .similar-not-found h3 {
+    font-size: 20px;
+  }
+  
+  .similar-not-found p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile Small (400px - 479px) */
+@media (max-width: 479px) {
+  .bike-detail-modern-page {
+    padding: 16px 8px 40px;
+  }
+  
+  .bike-card-modern {
+    padding: 12px;
+  }
+  
+  .main-bike-img {
+    height: 200px;
+  }
+  
+  .slider-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+  
+  .bike-details-modern {
+    padding: 16px;
+  }
+  
+  .bike-details-modern h1 {
+    font-size: 20px;
+  }
+  
+  .bike-details-modern h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  
+  .bike-details-modern h3 {
+    font-size: 16px;
+    margin: 20px 0 14px;
+  }
+  
+  .bike-desc {
+    font-size: 13px;
+  }
+  
+  .bike-specs-modern div {
+    padding: 12px;
+    font-size: 12px;
+  }
+  
+  .back-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .dealer-card {
+    padding: 16px;
+  }
+  
+  .dealer-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+  
+  .dealer-enquiry-btn,
+  .dealer-whatsapp-btn {
+    padding: 12px;
+    font-size: 13px;
+  }
+  
+  .enquiry-modal-content {
+    padding: 20px;
+  }
+  
+  .enquiry-modal-header h2 {
+    font-size: 20px;
+  }
+  
+  .enquiry-modal-subtext {
+    font-size: 14px;
+  }
+  
+  .enquiry-modal-content textarea {
+    padding: 14px;
+    font-size: 14px;
+    min-height: 100px;
+  }
+  
+  .enquiry-modal-content button[type="submit"] {
+    padding: 14px;
+    font-size: 15px;
+  }
+  
+  .enquiry-modal-close-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    top: 16px;
+    right: 16px;
+  }
+  
+  .similar-not-found-emoji {
+    font-size: 48px;
+  }
+  
+  .similar-not-found h3 {
+    font-size: 18px;
+  }
+  
+  .similar-not-found p {
+    font-size: 13px;
+  }
+  
+  .similar-not-found button {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile Extra Small (360px and below) */
+@media (max-width: 359px) {
+  .main-bike-img {
+    height: 180px;
+  }
+  
+  .bike-details-modern h1 {
+    font-size: 18px;
+  }
+  
+  .bike-details-modern h2 {
+    font-size: 16px;
+  }
+  
+  .bike-specs-modern div {
+    font-size: 11px;
+    padding: 10px;
+  }
+  
+  .dealer-avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+  
+  .dealer-info h4 {
+    font-size: 15px;
+  }
+}
+
+/* Height-based queries */
+@media (max-height: 600px) and (orientation: landscape) {
+  .enquiry-modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .main-bike-img {
+    height: 200px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .bike-detail-modern-page {
+    background: #fff;
+    padding: 20px;
+  }
+  
+  .dealer-card,
+  .similar-section,
+  .back-btn,
+  .slider-btn {
+    display: none;
+  }
+  
+  .bike-card-modern {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .bike-card-modern,
+  .bike-image-modern img,
+  .dealer-card,
+  .slider-btn {
+    transition: none !important;
+  }
+}
+
+
+
+.custom-toast {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  min-width: 280px;
+  max-width: 350px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  animation: slideInToast 0.4s ease, fadeOutToast 0.4s ease 2.6s forwards;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* SUCCESS */
+.custom-toast {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  min-width: 280px;
+  max-width: 350px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: #ffffff;          /* white clean background */
+  color: #222;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  animation: slideInToast 0.4s ease, fadeOutToast 0.4s ease 2.6s forwards;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* ICON COLOR */
+.custom-toast.success .toast-icon {
+  color: #16a34a;
+}
+
+.custom-toast.error .toast-icon {
+  color: #dc2626;
+}
+
+/* ================= PROGRESS BAR ================= */
+
+.custom-toast::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  animation: progressBar 3s linear forwards;
+}
+
+/* Success underline */
+.custom-toast.success::after {
+  background: #22c55e;
+}
+
+/* Error underline */
+.custom-toast.error::after {
+  background: #ef4444;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes slideInToast {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOutToast {
+  to {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+}
+
+@keyframes progressBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}

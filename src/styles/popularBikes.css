@@ -1,0 +1,66 @@
+.popular-bikes-container {
+  margin-top: 50px;
+  padding: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.popular-bikes-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #111;
+  text-align: center;
+}
+
+.popular-bikes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.bike-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.bike-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.bike-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.bike-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.bike-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.bike-price {
+  font-size: 1rem;
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bike-image img {
+    height: 130px;
+  }
+}

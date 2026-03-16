@@ -1,0 +1,237 @@
+/* ===== Wrapper card ===== */
+.filter-container {
+  width: 340px;
+  height: 480px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 26px 22px;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  animation: fadeUp 0.6s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ===== Rows ===== */
+.filter-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+/* ===== Labels ===== */
+.filter-row label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #2b2b2b;
+}
+
+/* ===== Select ===== */
+.filter-row select {
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid #dcdcdc;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  background-color: #fafafa;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.filter-row select:hover {
+  background-color: #ffffff;
+}
+
+/* ===== Input same as select ===== */
+.filter-row input {
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid #dcdcdc;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #222;
+  background-color: #fafafa;
+  transition: all 0.25s ease;
+}
+
+.filter-row input:focus {
+  outline: none;
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ===== Button ===== */
+.filter-btn {
+  width: 100%;
+  height: 50px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #e53935, #c62828);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* ===== Suggestions ===== */
+.filter-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.filter-suggestion-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.filter-suggestion-item:hover {
+  background: #f3f3f3;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Heading ===== */
+h1 {
+  margin-bottom: 18px;
+  color: #1f1f1f;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  background: linear-gradient(90deg, #e53935, #ff7043);
+  border-radius: 2px;
+  margin-top: 6px;
+}
+
+/* Disabled styles */
+.filter-row select:disabled {
+  color: #999;
+}
+
+.filter-row select option[disabled] {
+  color: #999;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* Large Laptop */
+@media (max-width: 1200px) {
+  .filter-container {
+    width: 300px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .filter-container {
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    height: auto;
+    padding: 24px;
+  }
+}
+
+/* ================= FILTER RESPONSIVE CLEAN ================= */
+
+@media (max-width: 1024px) {
+  .filter-container {
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-container {
+    width: 100%;
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .filter-container h1 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .filter-row input,
+  .filter-row select {
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .filter-btn {
+    height: 44px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-container {
+    padding: 14px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .filter-container {
+    width: 92%;
+    max-width: 350px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .filter-container h1 {
+    font-size: 16px;
+  }
+
+  .filter-row input,
+  .filter-row select {
+    height: 38px;
+    font-size: 12px;
+  }
+
+  .filter-btn {
+    height: 40px;
+    font-size: 13px;
+  }
+}
