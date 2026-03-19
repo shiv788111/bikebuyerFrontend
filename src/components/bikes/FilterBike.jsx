@@ -41,7 +41,7 @@ export default function FilterBike({ onFilter }) {
             if (value.length >= 1) {
               try {
                 const res = await fetch(
-                  `http://localhost:5000/api/buyer/suggestions?search=${value}`,
+                  `https://api.bikesbuyer.com/api/buyer/suggestions?search=${value}`,
                 );
                 const data = await res.json();
 

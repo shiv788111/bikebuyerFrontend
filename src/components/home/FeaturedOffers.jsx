@@ -9,7 +9,7 @@ export default function FeaturedOffers() {
       <div className="fo-unique-card">
         <div className="fo-unique-video">
           <iframe
-            src=""
+            src="https://www.youtube.com/watch?v=PSHTkGHfSVo"
             title="Offer Video"
             frameBorder="0"
             allow="autoplay; encrypted-media"

@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -31,12 +30,12 @@ export default function Navbar() {
   // Handle body scroll when mobile menu opens
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isOpen]);
 
@@ -47,8 +46,8 @@ export default function Navbar() {
         setIsOpen(false);
       }
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [isOpen]);
 
   // Google Places Autocomplete
@@ -91,14 +90,18 @@ export default function Navbar() {
     });
   }, [locationModalOpen, router]);
 
-  // Handle search
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!search.trim()) return;
+
+    // ❌ REMOVE current location
+    localStorage.removeItem("userLat");
+    localStorage.removeItem("userLng");
+
     const city = selectedLocation?.name || "";
-    router.push(`/?search=${encodeURIComponent(search)}&city=${encodeURIComponent(city)}`);
-    setSearch("");
-    setIsOpen(false); // Close mobile menu if open
+
+    // 🔥 HARD RELOAD (IMPORTANT)
+    window.location.href = `/?search=${encodeURIComponent(search)}&city=${encodeURIComponent(city)}`;
   };
 
   // Scroll effect
@@ -196,7 +199,7 @@ export default function Navbar() {
               if (value.length >= 1) {
                 try {
                   const res = await fetch(
-                    `http://localhost:5000/api/buyer/suggestions?search=${value}`,
+                    `https://api.bikesbuyer.com/api/buyer/suggestions?search=${value}`,
                   );
                   const data = await res.json();
                   setSuggestions(data.suggestions || []);
@@ -221,6 +224,8 @@ export default function Navbar() {
                   className="suggestion-item"
                   onClick={() => {
                     const modelName = item.split(" ").slice(1).join(" ");
+                    localStorage.removeItem("userLat");
+                    localStorage.removeItem("userLng");
                     setSearch(modelName);
                     setShowSuggestions(false);
                     router.push(`/?search=${encodeURIComponent(modelName)}`);
@@ -251,7 +256,8 @@ export default function Navbar() {
             onMouseLeave={() => setDropdownOpen(false)}
           >
             <button className="dropdown-toggle">
-              Bikes <FaChevronDown style={{ fontSize: "12px", marginLeft: "4px" }} />
+              Bikes{" "}
+              <FaChevronDown style={{ fontSize: "12px", marginLeft: "4px" }} />
             </button>
 
             {dropdownOpen && (
@@ -266,9 +272,9 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/SellerContact" onClick={closeMenu}>
+          {/* <Link href="/SellerContact" onClick={closeMenu}>
             Sell Your Bike
-          </Link>
+          </Link> */}
         </nav>
 
         {/* Desktop Auth Buttons */}
@@ -289,7 +295,11 @@ export default function Navbar() {
               </div>
             </div>
           ) : (
-            <Link href="/auth/login" className="bb-btn bb-btn-primary" onClick={closeMenu}>
+            <Link
+              href="/auth/login"
+              className="bb-btn bb-btn-primary"
+              onClick={closeMenu}
+            >
               Login
             </Link>
           )}
@@ -297,7 +307,7 @@ export default function Navbar() {
 
         {/* Hamburger menu with animation class */}
         <div
-          className={`bb-navbar__toggle ${isOpen ? 'open' : ''}`}
+          className={`bb-navbar__toggle ${isOpen ? "open" : ""}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -318,18 +328,20 @@ export default function Navbar() {
 
             {/* Mobile Dropdown */}
             <div className="dropdown">
-              <button 
+              <button
                 className="dropdown-toggle"
                 onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
               >
-                Bikes 
-                <FaChevronDown style={{ 
-                  fontSize: "14px", 
-                  transform: mobileDropdownOpen ? 'rotate(180deg)' : 'none',
-                  transition: 'transform 0.3s ease'
-                }} />
+                Bikes
+                <FaChevronDown
+                  style={{
+                    fontSize: "14px",
+                    transform: mobileDropdownOpen ? "rotate(180deg)" : "none",
+                    transition: "transform 0.3s ease",
+                  }}
+                />
               </button>
-              
+
               {mobileDropdownOpen && (
                 <div className="dropdown-menu">
                   <Link href="/bikes" onClick={closeMenu}>
@@ -341,10 +353,11 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+            {/* Buyer Sell bike */}
 
-            <Link href="/SellerContact" onClick={closeMenu}>
+            {/* <Link href="/SellerContact" onClick={closeMenu}>
               Sell Your Bike
-            </Link>
+            </Link> */}
           </nav>
 
           {/* Mobile Auth Buttons */}
@@ -352,7 +365,9 @@ export default function Navbar() {
             <div className="mobile-auth-container">
               {userName ? (
                 <>
-                  <span className="mobile-user-greeting">👋 Hello {userName}</span>
+                  <span className="mobile-user-greeting">
+                    👋 Hello {userName}
+                  </span>
                   <button
                     className="bb-btn bb-btn-outline"
                     onClick={() => {
@@ -451,13 +466,17 @@ export default function Navbar() {
                         components.forEach((comp) => {
                           if (
                             comp.types.includes("locality") ||
-                            comp.types.includes("administrative_area_level_2") ||
+                            comp.types.includes(
+                              "administrative_area_level_2",
+                            ) ||
                             comp.types.includes("sublocality") ||
                             comp.types.includes("postal_town")
                           ) {
                             if (!city) city = comp.long_name;
                           }
-                          if (comp.types.includes("administrative_area_level_1")) {
+                          if (
+                            comp.types.includes("administrative_area_level_1")
+                          ) {
                             state = comp.long_name;
                           }
                         });
@@ -465,11 +484,17 @@ export default function Navbar() {
 
                       const locationObj = {
                         id: Date.now(),
-                        name: city && state ? `${city}, ${state}` : city || "Current Location",
+                        name:
+                          city && state
+                            ? `${city}, ${state}`
+                            : city || "Current Location",
                       };
 
                       setSelectedLocation(locationObj);
-                      localStorage.setItem("selectedLocation", JSON.stringify(locationObj));
+                      localStorage.setItem(
+                        "selectedLocation",
+                        JSON.stringify(locationObj),
+                      );
                       setIsLocating(false);
                       setLocationModalOpen(false);
                       router.push("/");
@@ -507,7 +532,7 @@ export default function Navbar() {
                 if (value.length > 2) {
                   try {
                     const res = await fetch(
-                      "http://localhost:5000/api/buyer/reverse-geocode",
+                      "https://api.bikesbuyer.com/api/buyer/reverse-geocode",
                       {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
@@ -540,14 +565,29 @@ export default function Navbar() {
             />
 
             <div className="location-list">
-              {(locationSearch.length > 2 ? searchResults : filteredLocations).map((loc) => (
+              {(locationSearch.length > 2
+                ? searchResults
+                : filteredLocations
+              ).map((loc) => (
                 <div
                   key={loc.id}
                   className="location-row"
                   onClick={() => {
+                    // ❌ REMOVE current location
+                    localStorage.removeItem("userLat");
+                    localStorage.removeItem("userLng");
+
+                    // ✅ SAVE new manual location
                     setSelectedLocation(loc);
-                    localStorage.setItem("selectedLocation", JSON.stringify(loc));
+                    localStorage.setItem(
+                      "selectedLocation",
+                      JSON.stringify(loc),
+                    );
+
                     setLocationModalOpen(false);
+
+                    // 🔥 FORCE NEW DATA LOAD
+                    window.location.href = `/?city=${encodeURIComponent(loc.name)}`;
                   }}
                 >
                   <img src={loc.img} alt={loc.name} />

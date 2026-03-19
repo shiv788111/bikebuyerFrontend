@@ -129,13 +129,13 @@ export default function LoginPage() {
         </div>
 
         {/* Footer */}
-        <div className="footer-container">
+        {/* <div className="footer-container">
           <p className="footer-text">
             By continuing, you agree to our{" "}
             <button className="footer-link">Terms</button> and{" "}
             <button className="footer-link">Privacy Policy</button>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

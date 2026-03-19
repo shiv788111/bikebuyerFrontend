@@ -1,15 +1,33 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000/api";
+const API_BASE_URL = "https://api.bikesbuyer.com/api";
 
 /*==============GET TOTAL VEHICLE=====================*/
 
-export const getBuyerVehicles = async () => {
+// export const getBuyerVehicles = async () => {
+//   try {
+//     const res = await axios.get(`${API_BASE_URL}/buyer/vehicles`);
+//     return res.data;
+//   } catch (error) {
+//     console.error("Error fetching vehicles:", error);
+//     throw error;
+//   }
+// };
+
+export const getBuyerVehicles = async ({ search, city, category, subCategoryName } = {}) => {
   try {
-    const res = await axios.get(`${API_BASE_URL}/buyer/vehicles`);
+    const res = await axios.get(`${API_BASE_URL}/buyer/vehicles`, {
+      params: {
+        category,
+        subCategoryName,
+        search,
+        city,
+      },
+    });
+
     return res.data;
   } catch (error) {
-    console.error("Error fetching vehicles:", error);
+    console.error("Vehicle API error:", error);
     throw error;
   }
 };
@@ -69,7 +87,7 @@ export const getFilteredVehicles = async (filters = {}) => {
   }
 };
 
-/* ================= SEND  REQUEST  BIKE FOR BIKE================= */
+/* ================= SEND  REQUEST  BUYER FOR BIKE================= */
 export const requestBikeApi = async (vehicleId, message) => {
   try {
     const token = localStorage.getItem("token");
@@ -114,7 +132,7 @@ export const getVehiclesBySubCategory = async (subCategoryName) => {
 export const getSimilarVehicles = async (vehicleId) => {
   try {
     const res = await fetch(
-      `http://localhost:5000/api/buyer/vehicles/${vehicleId}/similar`,
+      `https://api.bikesbuyer.com/api/buyer/vehicles/${vehicleId}/similar`,
     );
 
     return await res.json();

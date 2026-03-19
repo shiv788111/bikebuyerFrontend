@@ -1,5 +1,5 @@
 // src/api/userApi.js
-const BASE_URL = "http://localhost:5000/api/user";
+const BASE_URL = "https://api.bikesbuyer.com/api/user";
 
 /* ========= SEND OTP ========= */
 export const sendOtpApi = async (phone) => {
@@ -84,7 +84,7 @@ export const buyerSignupApi = async (data) => {
 
 //=========SUBSCRIBE NEWSLETTER==================
 export const subscribeNewsletterApi = async (email) => {
-  const res = await fetch("http://localhost:5000/api/buyer/subscribe", {
+  const res = await fetch("https://api.bikesbuyer.com/api/buyer/subscribe", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
